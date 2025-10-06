@@ -9,7 +9,7 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
-        className="text-2xl leading-loose"
+        className=" text-lg sm:text-xl lg:text-2xl leading-loose"
       >
         I'm an aspiring frontend developer and UI designer, currently building
         my skills through hands-on projects and constant learning. I enjoy
@@ -22,7 +22,7 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-        className="text-2xl leading-loose text-gray"
+        className=" text-lg sm:text-xl lg:text-2xl leading-loose text-gray"
       >
         Outside of coding, I’m interested in gaming and fitness. When I’m not
         working on projects, you’ll usually find me exploring creative ideas,

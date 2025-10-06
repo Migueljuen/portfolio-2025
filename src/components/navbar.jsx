@@ -43,9 +43,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-100 right-10 z-10 h-60 w-14 rounded-3xl border border-white/10 bg-black flex flex-col items-center justify-between py-4 transition-transform duration-300 ${
-        isVisible ? "translate-x-0" : "translate-x-28"
-      }`}
+      className={`fixed z-10 rounded-3xl border border-white/10 bg-black flex items-center justify-between transition-transform duration-300
+        bottom-4 left-1/2 -translate-x-1/2 w-64 h-14 px-4 flex-row
+        lg:top-1/2 lg:-translate-y-1/2 lg:right-10 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:h-60 lg:w-14 lg:flex-col lg:py-4 lg:px-0
+        ${
+          isVisible
+            ? "translate-y-0 lg:translate-y-[-50%] lg:translate-x-0"
+            : "translate-y-28 lg:translate-y-[-50%] lg:translate-x-28"
+        }`}
     >
       {/* Move to the beginning of the page */}
       <div className="relative group">
@@ -55,7 +60,7 @@ export default function Navbar() {
         >
           <ArrowUpLeftIcon className="size-5" />
         </button>
-        <span className="text-white/80 absolute right-full mr-6 top-1/2 -translate-y-1/2 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           Back to Top
         </span>
       </div>
@@ -68,7 +73,7 @@ export default function Navbar() {
         >
           <PuzzlePieceIcon className="size-5" />
         </button>
-        <span className="text-white/80 absolute right-full mr-6 top-1/2 -translate-y-1/2 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           About Me
         </span>
       </div>
@@ -81,7 +86,7 @@ export default function Navbar() {
         >
           <GlobeAltIcon className="size-5" />
         </button>
-        <span className="text-white/80 absolute right-full mr-6 top-1/2 -translate-y-1/2 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           Projects
         </span>
       </div>
@@ -94,7 +99,7 @@ export default function Navbar() {
         >
           <ChatBubbleOvalLeftEllipsisIcon className="size-5" />
         </button>
-        <span className="text-white/80 absolute right-full mr-6 top-1/2 -translate-y-1/2 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           Reach out
         </span>
       </div>

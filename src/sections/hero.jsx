@@ -27,7 +27,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-          className="text-5xl font-medium leading-snug"
+          className="text-3xl sm:text-4xl lg:text-5xl  font-medium leading-snug"
         >
           Miguel Juen<br></br>Web Developer & UI Designer
         </motion.div>
