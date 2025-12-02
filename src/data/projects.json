@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Itinera — Smart Itinerary Planner for Travelers who want more",
+    "description": "A mobile app that generates personalized travel itineraries based on user preferences and curated local experiences.",
+    "year": 2025,
+    "image": "/src/assets/images/img2.png",
+    "tech": ["React Native", "Expo", "Node.js", "Express", "MySQL"],
+    "slug": "itinera-experiential-tourism-app",
+    "shadowColor": "rgba(16, 185, 129, 0.2)",
+    "long_description": "Itinera is a personalized travel itinerary planner designed for experiential tourism. Travelers select their preferred city and activities, and the system generates a dynamic itinerary based on curated experiences uploaded by creators. The app aims to simplify travel planning while promoting authentic local experiences."
+  },
+  {
+    "id": 2,
+    "title": "Riderly — Motorcycle Rental System",
+    "description": "A full-stack motorcycle rental platform with booking, business dashboards, subscription plans, and secure payment workflows.",
+    "year": 2025,
+    "image": "/src/assets/images/img1.png",
+    "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind"],
+    "slug": "riderly-motorcycle-rental",
+    "shadowColor": "rgba(20, 20, 20, 1)",
+    "long_description": "Riderly is a motorcycle rental web application that enables customers to browse, book, and pay for rentals while business owners manage listings, bookings, and subscriptions. Built using React for the frontend and Express + MySQL for backend operations."
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website (SPA)",
+    "description": "A minimalist single-page portfolio that highlights projects, skills, and experience with smooth navigation.",
+    "year": 2025,
+    "image": "/src/assets/images/img3.png",
+    "tech": ["React", "Vite", "Tailwind CSS"],
+    "slug": "portfolio-website",
+    "long_description": "A clean and modern personal portfolio built with React and Vite. Features a hero section, about section, recent works, and a dedicated project details page using React Router."
+  }
+]

@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <>
+      {/* Background image */}
+      <img
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+        src="./src/assets/images/bg3.svg"
+        alt=""
+      />
+
       <section className="flex flex-col items-start justify-center h-dvh gap-8 pb-24 ">
         <motion.div
           id="hero"

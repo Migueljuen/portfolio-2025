@@ -1,5 +1,6 @@
 import React from "react";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 export default function Works() {
   return (
@@ -23,18 +24,19 @@ export default function Works() {
         </p>
 
         {/* Works */}
-        <div className="w-full  flex flex-col gap-12 sm:gap-16 lg:gap-24">
+        <div className="w-full flex flex-col gap-12 sm:gap-16 lg:gap-24">
           <div id="projects"></div>
 
           {/* Project 1 */}
-          <div className="w-full flex flex-col">
-            <div className="relative  w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer group">
+          <Link to="/project/1" className="w-full flex flex-col group">
+            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
                 src="./src/assets/images/img2.png"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
               />
             </div>
+
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
                 <h1 className="text-lg sm:text-xl lg:text-2xl">
@@ -44,21 +46,21 @@ export default function Works() {
                   Description and function
                 </p>
               </div>
-              <div>
-                <p className="text-sm sm:text-base text-gray">2025</p>
-              </div>
+
+              <p className="text-sm sm:text-base text-gray">2025</p>
             </div>
-          </div>
+          </Link>
 
           {/* Project 2 */}
-          <div className="w-full flex flex-col">
-            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer group">
+          <Link to="/project/2" className="w-full flex flex-col group">
+            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
                 src="./src/assets/images/img1.png"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
               />
             </div>
+
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
                 <h1 className="text-lg sm:text-xl lg:text-2xl">
@@ -68,21 +70,21 @@ export default function Works() {
                   Description and function
                 </p>
               </div>
-              <div>
-                <p className="text-sm sm:text-base text-gray">2025</p>
-              </div>
+
+              <p className="text-sm sm:text-base text-gray">2025</p>
             </div>
-          </div>
+          </Link>
 
           {/* Project 3 */}
-          <div className="w-full flex flex-col">
-            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer group">
+          <Link to="/project/3" className="w-full flex flex-col group">
+            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
                 src="./src/assets/images/img3.png"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
               />
             </div>
+
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
                 <h1 className="text-lg sm:text-xl lg:text-2xl">
@@ -92,11 +94,10 @@ export default function Works() {
                   Description and function
                 </p>
               </div>
-              <div>
-                <p className="text-sm sm:text-base text-gray">2025</p>
-              </div>
+
+              <p className="text-sm sm:text-base text-gray">2025</p>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
     </>

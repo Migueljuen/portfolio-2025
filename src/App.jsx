@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Hero from "./sections/hero";
@@ -6,27 +6,36 @@ import Navbar from "./components/navbar";
 import About from "./sections/about";
 import Works from "./sections/works";
 import Footer from "./sections/footer";
+import ProjectDetails from "./sections/project-details";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
     <>
-      <img
-        className="absolute inset-0 w-full h-full object-cover -z-10"
-        src="./src/assets/images/bg3.svg"
-        alt=""
-      />
+      {/* Main container */}
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-        <Hero />
-        <About />
-        <Works />
+        {/* Main Sections */}
+        <Routes>
+          {/* Home page */}
 
-        <Navbar />
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Hero />
+                <About />
+                <Works />
+              </>
+            }
+          />
+
+          {/* Project details page */}
+          <Route path="/project/:id" element={<ProjectDetails />} />
+        </Routes>
+
+        {/* Footer*/}
         <Footer />
       </div>
     </>
   );
 }
-
-export default App;
