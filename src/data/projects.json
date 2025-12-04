@@ -1,34 +1,92 @@
 [
   {
     "id": 1,
-    "title": "Itinera — Smart Itinerary Planner for Travelers who want more",
-    "description": "A mobile app that generates personalized travel itineraries based on user preferences and curated local experiences.",
+    "title": "Itinera",
+    "description": "A mobile app that generates personalized travel itineraries based on user preferences and unique local experiences.",
     "year": 2025,
     "image": "/src/assets/images/img2.png",
-    "tech": ["React Native", "Expo", "Node.js", "Express", "MySQL"],
+    "screenshots": {
+      "onboarding": [
+        "/src/assets/images/itineraScreenshots/itinera1.png",
+        "/src/assets/images/itineraScreenshots/itinera2.png",
+        "/src/assets/images/itineraScreenshots/itinera3.png"
+      ],
+      "create": [
+        "/src/assets/images/itineraScreenshots/itineraCreate1.png",
+        "/src/assets/images/itineraScreenshots/itineraCreate2.png",
+        "/src/assets/images/itineraScreenshots/itineraCreate3.png"
+      ],
+      "detail": ["/src/assets/images/itineraScreenshots/itineraExp2.png"]
+    },
+    "onboardingText": "Discover your next adventure",
+    "onboardingSubText": "Browse personalized itineraries or let us craft the perfect trip based on your interests and travel style.",
+    "createText": "Build Your Itinerary",
+    "createSubText": "Build your perfect itinerary in minutes. Select activities, set your pace, and let Itinera organize your day with authentic local experiences.",
+    "detail": "Explore Authentic Experiences",
+    "detailSubText": "Find activities that match your interests. From historical landmarks to cultural hotspots, discover what makes each destination truly special.",
+    "tech": ["React Native", "Expo", "Node.js", "Express", "MySQL", "Tailwind"],
     "slug": "itinera-experiential-tourism-app",
     "shadowColor": "rgba(16, 185, 129, 0.2)",
-    "long_description": "Itinera is a personalized travel itinerary planner designed for experiential tourism. Travelers select their preferred city and activities, and the system generates a dynamic itinerary based on curated experiences uploaded by creators. The app aims to simplify travel planning while promoting authentic local experiences."
+    "long_description": "Itinera is a personalized travel itinerary planner designed for experiential tourism. Travelers select their preferred city and activities, and the system creates a dynamic itinerary using meaningful local experiences uploaded by creators. The app makes trip planning easier while helping users discover authentic and memorable activities in their chosen destination."
   },
   {
     "id": 2,
-    "title": "Riderly — Motorcycle Rental System",
+    "title": "On The Go",
     "description": "A full-stack motorcycle rental platform with booking, business dashboards, subscription plans, and secure payment workflows.",
     "year": 2025,
-    "image": "/src/assets/images/img1.png",
+    "image": "/src/assets/images/img2.png",
+    "screenshots": {
+      "onboarding": [
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png"
+      ],
+      "create": [
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png"
+      ],
+      "detail": ["/src/assets/images/img2.png"]
+    },
+    "onboardingText": "Start your riding journey",
+    "onboardingSubText": "Browse premium motorcycles, check availability, and book your dream ride in just a few taps.",
+    "createText": "List Your Motorcycle",
+    "createSubText": "Turn your motorcycle into income. Create detailed listings with photos, set your rates, and manage bookings through our intuitive business dashboard.",
+    "detail": "Manage Your Rental Business",
+    "detailSubText": "Track bookings, monitor earnings, and grow your motorcycle rental business with powerful analytics and subscription tools designed for owners.",
     "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind"],
-    "slug": "riderly-motorcycle-rental",
+    "slug": "onthego-motorcycle-rental",
     "shadowColor": "rgba(20, 20, 20, 1)",
-    "long_description": "Riderly is a motorcycle rental web application that enables customers to browse, book, and pay for rentals while business owners manage listings, bookings, and subscriptions. Built using React for the frontend and Express + MySQL for backend operations."
+    "long_description": "On The Go is a motorcycle rental web application that enables customers to browse, book, and pay for rentals while business owners manage listings, bookings, and subscriptions. Built using React for the frontend and Express + MySQL for backend operations."
   },
   {
     "id": 3,
-    "title": "Portfolio Website (SPA)",
-    "description": "A minimalist single-page portfolio that highlights projects, skills, and experience with smooth navigation.",
+    "title": "ShareBasket",
+    "description": "A simple grocery list app perfect for families, couples, and friends. It features real-time family sharing so everyone stays updated on what to buy.",
     "year": 2025,
-    "image": "/src/assets/images/img3.png",
-    "tech": ["React", "Vite", "Tailwind CSS"],
-    "slug": "portfolio-website",
-    "long_description": "A clean and modern personal portfolio built with React and Vite. Features a hero section, about section, recent works, and a dedicated project details page using React Router."
+    "image": "/src/assets/images/img2.png",
+    "screenshots": {
+      "onboarding": [
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png"
+      ],
+      "create": [
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png",
+        "/src/assets/images/img2.png"
+      ],
+      "detail": ["/src/assets/images/img2.png"]
+    },
+    "onboardingText": "Shop smarter together",
+    "onboardingSubText": "Create shared grocery lists that sync instantly across all devices. Never miss an item or double-buy again.",
+    "createText": "Build Your Shopping List",
+    "createSubText": "Add items, organize by category, and check them off as you shop. Our intuitive interface makes list management effortless.",
+    "detail": "Real-Time Family Sync",
+    "detailSubText": "Share your lists with family members instantly. Everyone sees updates in real-time, making grocery shopping a truly collaborative experience.",
+    "tech": ["React Native", "Expo", "Firebase", "Tailwind"],
+    "slug": "sharebasket",
+    "shadowColor": "rgba(30, 30, 30, 1)",
+    "long_description": "ShareBasket is a collaborative grocery list application designed to make shopping easier for families, couples, and groups. It includes a seamless sharing feature that allows multiple users to access and update the same grocery list in real time—ensuring no item is forgotten and everyone stays in sync. Built with React native, the app provides a clean, intuitive interface with smooth navigation."
   }
 ]

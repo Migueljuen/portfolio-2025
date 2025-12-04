@@ -18,7 +18,7 @@ export default function Works() {
           Turning Points In <br />
           My Journey
         </h1>
-        <p className="text-gray text-sm sm:text-base max-w-xl">
+        <p className="text-gray text-lg max-w-xl">
           Every project I build is more than just code - it's a reflection of
           how I'm learning, experimenting, and improving as a developer.
         </p>
@@ -39,15 +39,13 @@ export default function Works() {
 
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
-                <h1 className="text-lg sm:text-xl lg:text-2xl">
-                  Project title
-                </h1>
-                <p className="text-sm sm:text-base text-gray">
-                  Description and function
+                <h1 className="text-xl  lg:text-2xl">Itinera</h1>
+                <p className="text-xl text-gray">
+                  Experiential tourism made easy
                 </p>
               </div>
 
-              <p className="text-sm sm:text-base text-gray">2025</p>
+              <p className=" text-xl text-gray">2025</p>
             </div>
           </Link>
 
@@ -63,15 +61,11 @@ export default function Works() {
 
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
-                <h1 className="text-lg sm:text-xl lg:text-2xl">
-                  Project title
-                </h1>
-                <p className="text-sm sm:text-base text-gray">
-                  Description and function
-                </p>
+                <h1 className="text-xl lg:text-2xl">On The Go</h1>
+                <p className="text-xl text-gray">Book your next ride</p>
               </div>
 
-              <p className="text-sm sm:text-base text-gray">2025</p>
+              <p className="text-xl text-gray">2025</p>
             </div>
           </Link>
 
@@ -87,15 +81,11 @@ export default function Works() {
 
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
-                <h1 className="text-lg sm:text-xl lg:text-2xl">
-                  Project title
-                </h1>
-                <p className="text-sm sm:text-base text-gray">
-                  Description and function
-                </p>
+                <h1 className="text-xl lg:text-2xl">ShareBasket</h1>
+                <p className="text-xl text-gray">Shared shopping made simple</p>
               </div>
 
-              <p className="text-sm sm:text-base text-gray">2025</p>
+              <p className="text-xl text-gray">2025</p>
             </div>
           </Link>
         </div>

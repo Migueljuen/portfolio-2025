@@ -15,7 +15,7 @@ export default function Footer() {
       id="contact"
       className="h-90 mt-24 flex flex-col justify-center gap-8"
     >
-      <h1 className="text-lg lg:text-2xl">
+      <h1 className="text-xl lg:text-2xl">
         &copy; Miguel Juen. All Rights Reserved.
       </h1>
 
@@ -25,7 +25,7 @@ export default function Footer() {
           href="https://www.facebook.com/migueljueen"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-lg lg:text-2xl w-fit text-gray hover:text-gray/50 transition-colors duration-300 cursor-pointer"
+          className="text-xl lg:text-2xl w-fit text-gray hover:text-gray/50 transition-colors duration-300 cursor-pointer"
         >
           Facebook
         </a>
@@ -35,7 +35,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/miguel-juen-639718280/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-lg lg:text-2xl w-fit text-gray hover:text-gray/50 transition-colors duration-300 cursor-pointer"
+          className="text-xl lg:text-2xl w-fit text-gray hover:text-gray/50 transition-colors duration-300 cursor-pointer"
         >
           LinkedIn
         </a>
@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Copy email */}
         <button
           onClick={handleCopyEmail}
-          className="text-lg lg:text-2xl w-fit text-gray hover:text-gray/50 transition-colors duration-300 cursor-pointer"
+          className="text-xl lg:text-2xl w-fit text-gray hover:text-gray/50 transition-colors duration-300 cursor-pointer"
         >
           {copied ? "Copied!" : "Copy Email"}
         </button>

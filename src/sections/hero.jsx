@@ -10,7 +10,7 @@ export default function Hero() {
         alt=""
       />
 
-      <section className="flex flex-col items-start justify-center h-dvh gap-8 pb-24 ">
+      <section className="flex flex-col items-start justify-center h-dvh gap-8   pb-48 lg:pb-24 ">
         <motion.div
           id="hero"
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
@@ -42,10 +42,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-          className="text-gray text-base"
+          className="text-gray text-lg"
         >
-          Based in Bacolod - passionate in learning and building beautiful
-          websites <br />
+          Based in Bacolod - passionate in learning and building beautiful UI{" "}
+          <br />
           mainly in the JavaScript ecosystem.
         </motion.div>
       </section>
