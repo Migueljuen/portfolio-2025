@@ -1,5 +1,4 @@
 import React from "react";
-import background from "../assets/images/bg3.svg";
 
 import { motion } from "framer-motion";
 export default function Hero() {
@@ -7,8 +6,8 @@ export default function Hero() {
     <>
       {/* Background image */}
       <img
+        src="/bg3.svg"
         className="absolute inset-0 w-full h-full object-cover -z-10"
-        src={background}
         alt=""
       />
 
