@@ -4,19 +4,15 @@
     "title": "Itinera",
     "description": "A mobile app that generates personalized travel itineraries based on user preferences and unique local experiences.",
     "year": 2025,
-    "image": "/src/assets/images/img2.png",
+    "image": "/img2.png",
     "screenshots": {
-      "onboarding": [
-        "/src/assets/images/itineraScreenshots/itinera1.png",
-        "/src/assets/images/itineraScreenshots/itinera2.png",
-        "/src/assets/images/itineraScreenshots/itinera3.png"
-      ],
+      "onboarding": ["/itinera1.png", "/itinera2.png", "/itinera3.png"],
       "create": [
-        "/src/assets/images/itineraScreenshots/itineraCreate1.png",
-        "/src/assets/images/itineraScreenshots/itineraCreate2.png",
-        "/src/assets/images/itineraScreenshots/itineraCreate3.png"
+        "/itineraCreate1.png",
+        "/itineraCreate2.png",
+        "/itineraCreate3.png"
       ],
-      "detail": ["/src/assets/images/itineraScreenshots/itineraExp2.png"]
+      "detail": ["/itineraExp2.png"]
     },
     "onboardingText": "Discover your next adventure",
     "onboardingSubText": "Browse personalized itineraries or let us craft the perfect trip based on your interests and travel style.",
@@ -34,19 +30,11 @@
     "title": "On The Go",
     "description": "A full-stack motorcycle rental platform with booking, business dashboards, subscription plans, and secure payment workflows.",
     "year": 2025,
-    "image": "/src/assets/images/img2.png",
+    "image": "/img1.png",
     "screenshots": {
-      "onboarding": [
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png"
-      ],
-      "create": [
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png"
-      ],
-      "detail": ["/src/assets/images/img2.png"]
+      "onboarding": ["/img1.png", "/img1.png", "/img1.png"],
+      "create": ["/img1.png", "/img1.png", "/img1.png"],
+      "detail": ["/img1.png"]
     },
     "onboardingText": "Start your riding journey",
     "onboardingSubText": "Browse premium motorcycles, check availability, and book your dream ride in just a few taps.",
@@ -64,19 +52,11 @@
     "title": "ShareBasket",
     "description": "A simple grocery list app perfect for families, couples, and friends. It features real-time family sharing so everyone stays updated on what to buy.",
     "year": 2025,
-    "image": "/src/assets/images/img2.png",
+    "image": "/img3.png",
     "screenshots": {
-      "onboarding": [
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png"
-      ],
-      "create": [
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png",
-        "/src/assets/images/img2.png"
-      ],
-      "detail": ["/src/assets/images/img2.png"]
+      "onboarding": ["/img3.png", "/img3.png", "/img3.png"],
+      "create": ["/img3.png", "/img3.png", "/img3.png"],
+      "detail": ["/img3.png"]
     },
     "onboardingText": "Shop smarter together",
     "onboardingSubText": "Create shared grocery lists that sync instantly across all devices. Never miss an item or double-buy again.",

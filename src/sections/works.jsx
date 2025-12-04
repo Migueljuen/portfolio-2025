@@ -31,7 +31,7 @@ export default function Works() {
           <Link to="/project/1" className="w-full flex flex-col group">
             <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
-                src="./src/assets/images/img2.png"
+                src="/img2.png"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
               />
@@ -53,7 +53,7 @@ export default function Works() {
           <Link to="/project/2" className="w-full flex flex-col group">
             <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
-                src="./src/assets/images/img1.png"
+                src="/img1.png"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
               />
@@ -73,7 +73,7 @@ export default function Works() {
           <Link to="/project/3" className="w-full flex flex-col group">
             <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
-                src="./src/assets/images/img3.png"
+                src="/img3.png"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
               />
