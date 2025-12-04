@@ -44,7 +44,7 @@ export default function ProjectDetails() {
   return (
     <div className="flex flex-col gap-16">
       {/* TITLE */}
-      <div className="flex  mt-32">
+      <div className="flex  mt-24 lg:mt-32">
         <div className="flex flex-row justify-between items-baseline  w-full ">
           <div className="flex flex-col gap-2">
             <h1 className="text-3xl sm:text-4xl font-medium leading-snug w-full">
@@ -143,7 +143,7 @@ export default function ProjectDetails() {
       {/* Detail */}
       <div className="mt-32">
         <div className="flex flex-col items-center gap-24">
-          <div className="w-[36rem] sm:w-[48rem]  overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-[1.01]">
+          <div className="w-[36rem] sm:w-[48rem] max-w-11/12  overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-[1.01]">
             <img
               src={project.screenshots.detail[0]}
               alt="Detail"
