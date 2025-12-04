@@ -1,5 +1,6 @@
 import React from "react";
-import background from "./src/assets/images/bg3.svg";
+import background from "../assets/images/bg3.svg";
+
 import { motion } from "framer-motion";
 export default function Hero() {
   return (
