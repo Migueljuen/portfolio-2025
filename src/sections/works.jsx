@@ -24,12 +24,12 @@ export default function Works() {
         </p>
 
         {/* Works */}
-        <div className="w-full flex flex-col gap-12 sm:gap-16 lg:gap-24">
+        <div className="w-full py-12 ">
           <div id="projects"></div>
 
           {/* Project 1 */}
-          <Link to="/project/1" className="w-full flex flex-col group">
-            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
+          <Link to="/project/1" className="w-full flex flex-col group mb-12">
+            <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
               <img
                 src="/img2.png"
                 alt=""
@@ -39,8 +39,8 @@ export default function Works() {
 
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div>
-                <h1 className="text-xl  lg:text-2xl">Itinera</h1>
-                <p className="text-xl text-gray">
+                <h1 className="text-xl">Itinera</h1>
+                <p className="text-lg text-gray">
                   Experiential tourism made easy
                 </p>
               </div>
@@ -49,45 +49,50 @@ export default function Works() {
             </div>
           </Link>
 
-          {/* Project 2 */}
-          <Link to="/project/2" className="w-full flex flex-col group">
-            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-              <img
-                src="/img1.png"
-                alt=""
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-              <div>
-                <h1 className="text-xl lg:text-2xl">On The Go</h1>
-                <p className="text-xl text-gray">Book your next ride</p>
+          <div className="flex flex-col lg:flex-row gap-12  ">
+            {/* Project 2 */}
+            <Link to="/project/2" className="w-full flex flex-col group">
+              <div className="relative rounded-xl w-full aspect-[16/9] lg:aspect-[4/3]  bg-white/5 overflow-hidden cursor-pointer">
+                <img
+                  src="/img1.png"
+                  alt=""
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+                />
               </div>
 
-              <p className="text-xl text-gray">2025</p>
-            </div>
-          </Link>
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+                <div>
+                  <h1 className="text-xl">On The Go</h1>
+                  <p className="text-lg text-gray">Book your next ride</p>
+                </div>
 
-          {/* Project 3 */}
-          <Link to="/project/3" className="w-full flex flex-col group">
-            <div className="relative w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-              <img
-                src="/img3.png"
-                alt=""
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-              />
-            </div>
+                <p className="text-xl text-gray">2025</p>
+              </div>
+            </Link>
 
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-              <div>
-                <h1 className="text-xl lg:text-2xl">ShareBasket</h1>
-                <p className="text-xl text-gray">Shared shopping made simple</p>
+            {/* Project 3 */}
+            <Link to="/project/3" className="w-full flex flex-col group">
+              <div className="relative rounded-xl w-full aspect-[16/9] lg:aspect-[4/3] bg-white/5 overflow-hidden cursor-pointer">
+                <img
+                  src="/img3.png"
+                  alt=""
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+                  style={{ objectPosition: "left 20% top 10%" }}
+                />
               </div>
 
-              <p className="text-xl text-gray">2025</p>
-            </div>
-          </Link>
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+                <div>
+                  <h1 className="text-xl">ShareBasket</h1>
+                  <p className="text-lg text-gray">
+                    Shared shopping made simple
+                  </p>
+                </div>
+
+                <p className="text-xl text-gray">2025</p>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
     </>

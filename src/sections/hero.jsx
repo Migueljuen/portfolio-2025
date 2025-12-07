@@ -1,14 +1,22 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 export default function Hero() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <>
       {/* Background image */}
       <img
+        src="/bg3-blur.png"
+        className="absolute inset-0 w-full h-full object-cover -z-10 blur-xl scale-105"
+      />
+
+      <img
         src="/bg3.svg"
-        className="absolute inset-0 w-full h-full object-cover -z-10"
-        alt=""
+        onLoad={() => setLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover -z-10 transition-opacity duration-700 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
       />
 
       <section className="flex flex-col items-start justify-center h-dvh gap-8   pb-48 lg:pb-24 ">
