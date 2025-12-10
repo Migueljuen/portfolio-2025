@@ -18,7 +18,7 @@ export default function Hero() {
           loaded ? "opacity-100" : "opacity-0"
         }`}
       />
-      <section className="flex flex-col items-start justify-center h-dvh gap-8   pb-48 lg:pb-24 ">
+      <section className="flex flex-col items-start justify-center h-dvh gap-6   pb-48 lg:pb-24 ">
         <motion.div
           id="hero"
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
