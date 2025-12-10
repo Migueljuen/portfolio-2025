@@ -8,17 +8,16 @@ export default function Hero() {
       {/* Background image */}
       <img
         src="/bg3-blur.png"
-        className="absolute inset-0 w-full h-full object-cover -z-10 blur-xl scale-105"
+        className="absolute inset-0 w-full h-full  object-cover -z-10 blur-xl "
       />
 
       <img
         src="/bg3.svg"
         onLoad={() => setLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover -z-10 transition-opacity duration-700 ${
+        className={`absolute inset-0 w-full h-full  object-cover -z-10 transition-opacity duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
       />
-
       <section className="flex flex-col items-start justify-center h-dvh gap-8   pb-48 lg:pb-24 ">
         <motion.div
           id="hero"
