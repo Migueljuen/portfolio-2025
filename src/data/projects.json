@@ -22,7 +22,7 @@
     "detailSubText": "Find activities that match your interests. From historical landmarks to cultural hotspots, discover what makes each destination truly special.",
     "tech": ["React Native", "Expo", "Node.js", "Express", "MySQL", "Tailwind"],
     "slug": "itinera-experiential-tourism-app",
-    "shadowColor": "rgba(135, 206, 235, 0.15)",
+    "shadowColor": "rgba(135, 206, 235, 0.25)",
     "long_description": "Itinera is a personalized travel itinerary planner designed for experiential tourism. Travelers select their preferred city and activities, and the system creates a dynamic itinerary using meaningful local experiences uploaded by creators. The app makes trip planning easier while helping users discover authentic and memorable activities in their chosen destination."
   },
   {
