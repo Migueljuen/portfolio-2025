@@ -34,13 +34,6 @@ export default function ProjectDetails() {
     window.scrollTo(0, 0);
   }, []);
 
-  //   SPLIT DESCRIPTION INTO TWO
-  const text = project.long_description;
-  const midChar = Math.floor(text.length / 2);
-  const splitIndex = text.lastIndexOf(" ", midChar);
-  const firstHalf = text.slice(0, splitIndex);
-  const secondHalf = text.slice(splitIndex + 1);
-
   if (!project)
     return (
       <div className="h-dvh flex justify-center flex-col gap-8 items-center ">
@@ -54,6 +47,13 @@ export default function ProjectDetails() {
         </Link>
       </div>
     );
+
+  //   SPLIT DESCRIPTION INTO TWO
+  const text = project.long_description;
+  const midChar = Math.floor(text.length / 2);
+  const splitIndex = text.lastIndexOf(" ", midChar);
+  const firstHalf = text.slice(0, splitIndex);
+  const secondHalf = text.slice(splitIndex + 1);
 
   return (
     <div className="flex flex-col gap-16">
