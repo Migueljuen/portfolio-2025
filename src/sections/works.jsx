@@ -41,7 +41,7 @@ export default function Works() {
               <div>
                 <h1 className="text-xl">Itinera</h1>
                 <p className="text-lg text-gray">
-                  Experiential tourism made easy
+                  Itinerary planning made easy
                 </p>
               </div>
 
@@ -62,8 +62,10 @@ export default function Works() {
 
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
                 <div>
-                  <h1 className="text-xl">On The Go</h1>
-                  <p className="text-lg text-gray">Book your next ride</p>
+                  <h1 className="text-xl">QuikBasket</h1>
+                  <p className="text-lg text-gray">
+                    Your groceries, at your doorstep.
+                  </p>
                 </div>
 
                 <p className="text-xl text-gray">2025</p>
@@ -83,9 +85,9 @@ export default function Works() {
 
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
                 <div>
-                  <h1 className="text-xl">ShareBasket</h1>
+                  <h1 className="text-xl">SavoryTrail</h1>
                   <p className="text-lg text-gray">
-                    Shared shopping made simple
+                    Sharing recipes made simple
                   </p>
                 </div>
 
