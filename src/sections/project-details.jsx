@@ -22,9 +22,6 @@ export default function ProjectDetails() {
     return (
       <div className="h-dvh flex justify-center flex-col gap-8 items-center ">
         <div className=" flex justify-start flex-col items-center gap-32">
-          <div className="relative  rounded-xl  overflow-hidden cursor-pointer">
-            <img src="/notfound.svg" alt="" className=" h-80 object-cover " />
-          </div>
           <p className="text-xl lg:text-2xl">
             This project is currently in progress. Coming soon.
           </p>
@@ -182,7 +179,7 @@ export default function ProjectDetails() {
       <div className="flex flex-col   mt-32">
         <div className="text-xl lg:text-2xl leading-loose">Itinera's Goal</div>
         <div className="space-y-8">
-          <p className="text-xl lg:text-2xl leading-loose text-gray">
+          <p className="text-xl lg:text-2xl leading-loose text-gray ">
             I often find travel planning overwhelming, jumping between maps,
             blogs, and notes just to build a simple itinerary, only to end up
             with generic plans that do not really match what I enjoy.
@@ -204,7 +201,7 @@ export default function ProjectDetails() {
               </li>
             </ul>
           </div>
-          <p className="text-xl lg:text-2xl leading-loose text-gray">
+          <p className="text-xl lg:text-2xl leading-loose text-gray ">
             Instead of settling for one size fits all plans, I chose the second
             option, designing an itinerary system focused on experiential
             tourism, where travelers receive personalized, dynamic plans that
@@ -216,7 +213,7 @@ export default function ProjectDetails() {
       {/* Tech used */}
       <div className="flex flex-col   mt-32">
         <div className="text-xl lg:text-2xl leading-loose">Tech Stack Used</div>
-        <div className="text-xl lg:text-2xl leading-loose text-gray">
+        <div className="text-xl lg:text-2xl leading-loose text-gray ">
           {project.techDescription}
         </div>
         <div className="flex gap-3 flex-wrap mt-8">
