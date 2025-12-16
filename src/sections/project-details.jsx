@@ -18,20 +18,6 @@ export default function ProjectDetails() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
 
-  if (!project)
-    return (
-      <div className="h-dvh flex justify-center flex-col gap-8 items-center ">
-        <div className=" flex justify-start flex-col items-center gap-32">
-          <p className="text-xl lg:text-2xl">
-            This project is currently in progress. Coming soon.
-          </p>
-        </div>
-        <Link to="/" className="text-lg lg:text-xl text-gray">
-          Go back to homepage
-        </Link>
-      </div>
-    );
-
   const techIcons = {
     "React Native": <SiReact />,
     React: <SiReact />,
@@ -54,6 +40,20 @@ export default function ProjectDetails() {
   const splitIndex = text.lastIndexOf(" ", midChar);
   const firstHalf = text.slice(0, splitIndex);
   const secondHalf = text.slice(splitIndex + 1);
+
+  if (!project)
+    return (
+      <div className="h-dvh flex justify-center flex-col gap-8 items-center ">
+        <div className=" flex justify-start flex-col items-center gap-32">
+          <p className="text-xl lg:text-2xl">
+            This project is currently in progress. Coming soon.
+          </p>
+        </div>
+        <Link to="/" className="text-lg lg:text-xl text-gray">
+          Go back to homepage
+        </Link>
+      </div>
+    );
 
   return (
     <div className="flex flex-col gap-16">
