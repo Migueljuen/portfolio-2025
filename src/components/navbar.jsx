@@ -1,108 +1,55 @@
-import React, { useState, useEffect } from "react";
-import {
-  ArrowUpLeftIcon,
-  GlobeAltIcon,
-  PuzzlePieceIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
-} from "@heroicons/react/24/outline";
+import React from "react";
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
-        setIsVisible(false);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-    }
-  };
-
   return (
-    <nav
-      className={`fixed z-10 rounded-3xl border border-white/10 bg-black flex items-center justify-between transition-transform duration-300
-        bottom-4 left-1/2 -translate-x-1/2 w-64 h-14 px-4 flex-row
-        lg:top-1/2 lg:-translate-y-1/2 lg:right-10 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:h-60 lg:w-14 lg:flex-col lg:py-4 lg:px-0
-        ${
-          isVisible
-            ? "translate-y-0 lg:translate-y-[-50%] lg:translate-x-0"
-            : "translate-y-28 lg:translate-y-[-50%] lg:translate-x-28"
-        }`}
-    >
-      {/* Move to the beginning of the page */}
-      <div className="relative group">
-        <button
-          onClick={() => scrollToSection("hero")}
-          className="cursor-pointer p-2 rounded-xl transition-all duration-300 hover:scale-125"
-        >
-          <ArrowUpLeftIcon className="size-5" />
-        </button>
-        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-          Back to Top
-        </span>
+    <header class="flex justify-between z-10 sticky top-0 bg-white py-4">
+      <p>
+        <a href="#" class="">
+          Miguel Juen
+        </a>
+      </p>
+      <div>
+        <nav>
+          <ul class="space-x-8 hidden md:flex">
+            <li>
+              <a href="projects.html" class="">
+                Featured Work
+              </a>
+            </li>
+            <li>
+              <a href="services.html" class="">
+                Solutions
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="">
+                Story
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="">
+                Reach Out
+              </a>
+            </li>
+          </ul>
+          <button onclick="toggleMenu()" class="block md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+        </nav>
       </div>
-
-      {/* About me */}
-      <div className="relative group">
-        <button
-          onClick={() => scrollToSection("about")}
-          className="cursor-pointer p-2 rounded-xl transition-all duration-300 hover:scale-125"
-        >
-          <PuzzlePieceIcon className="size-5" />
-        </button>
-        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-          About Me
-        </span>
-      </div>
-
-      {/* Projects */}
-      <div className="relative group">
-        <button
-          onClick={() => scrollToSection("projects")}
-          className="cursor-pointer p-2 rounded-xl transition-all duration-300 hover:scale-125"
-        >
-          <GlobeAltIcon className="size-5" />
-        </button>
-        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-          Projects
-        </span>
-      </div>
-
-      {/* Contact */}
-      <div className="relative group">
-        <button
-          onClick={() => scrollToSection("contact")}
-          className="cursor-pointer p-2 rounded-xl transition-all duration-300 hover:scale-125"
-        >
-          <ChatBubbleOvalLeftEllipsisIcon className="size-5" />
-        </button>
-        <span className="text-white/80 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 lg:right-full lg:mr-6 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 lg:bottom-auto lg:mb-0 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-          Reach out
-        </span>
-      </div>
-    </nav>
+    </header>
   );
 }

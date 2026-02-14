@@ -1,4 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Switzer", sans-serif;
-  color: #ffffffe9;
+  /* color: #ffffffe9; */
 }

@@ -24,7 +24,7 @@ export default function App() {
                 <Navbar />
                 <Hero />
                 <About />
-                <Works />
+                {/* <Works /> */}
               </>
             }
           />
