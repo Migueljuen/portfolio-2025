@@ -12,22 +12,18 @@ export default function Navbar() {
         <nav>
           <ul class="space-x-8 hidden md:flex">
             <li>
-              <a href="projects.html" class="">
+              <a href="#featured" class="">
                 Featured Work
               </a>
             </li>
             <li>
-              <a href="services.html" class="">
-                Solutions
+              <a href="#mockups" class="">
+                Mockups
               </a>
             </li>
+          
             <li>
-              <a href="about.html" class="">
-                Story
-              </a>
-            </li>
-            <li>
-              <a href="contact.html" class="">
+              <a href="#footer" class="">
                 Reach Out
               </a>
             </li>

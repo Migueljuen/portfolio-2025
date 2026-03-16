@@ -70,7 +70,7 @@ export default function ProjectDetails() {
             </p>
           </div>
 
-          <p className="text-xl sm:text-xl lg:text-2xl text-gray">
+          <p className="text-xl sm:text-xl text-gray">
             {project.year}
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function ProjectDetails() {
           {project.screenshots.onboarding.map((img, i) => (
             <div
               key={i}
-              className="aspect-[9/19.5] overflow-hidden rounded-lg shadow-lg"
+              className="aspect-[9/19.5] overflow-hidden rounded-lg "
             >
               <img
                 src={img}
@@ -124,7 +124,7 @@ export default function ProjectDetails() {
         <div className="text-xl lg:text-2xl leading-loose">
           {project.onboardingText}
         </div>
-        <div className="text-xl lg:text-2xl leading-loose text-gray">
+        <div className="text-xl leading-loose text-gray">
           {project.onboardingSubText}
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function ProjectDetails() {
           {project.screenshots.create.map((img, i) => (
             <div
               key={i}
-              className="aspect-[9/19.5] overflow-hidden rounded-lg shadow-lg"
+              className="aspect-[9/19.5] overflow-hidden rounded-lg "
             >
               <img
                 src={img}
@@ -149,7 +149,7 @@ export default function ProjectDetails() {
         <div className="text-xl lg:text-2xl leading-loose">
           {project.createText}
         </div>
-        <div className="text-xl lg:text-2xl leading-loose text-gray">
+        <div className="text-xl leading-loose text-gray">
           {project.createSubText}
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function ProjectDetails() {
       {/* Detail */}
       <div className="mt-32">
         <div className="flex flex-col items-center gap-24">
-          <div className="w-[36rem] sm:w-[48rem] max-w-11/12  overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-[1.01]">
+          <div className="w-[36rem] sm:w-[48rem] max-w-11/12  overflow-hidden rounded-lg  transition-transform duration-300 hover:scale-[1.01]">
             <img
               src={project.screenshots.detail[0]}
               alt="Detail"
@@ -168,7 +168,7 @@ export default function ProjectDetails() {
             <div className="text-xl lg:text-2xl leading-loose">
               {project.detail}
             </div>
-            <div className="text-xl lg:text-2xl leading-loose text-gray">
+            <div className="text-xl  leading-loose text-gray">
               {project.detailSubText}
             </div>
           </div>
@@ -179,21 +179,21 @@ export default function ProjectDetails() {
       <div className="flex flex-col   mt-32">
         <div className="text-xl lg:text-2xl leading-loose">Itinera's Goal</div>
         <div className="space-y-8">
-          <p className="text-xl lg:text-2xl leading-loose text-gray ">
+          <p className="text-xl  leading-loose text-gray ">
             I often find travel planning overwhelming, jumping between maps,
             blogs, and notes just to build a simple itinerary, only to end up
             with generic plans that do not really match what I enjoy.
           </p>
-          <p className="text-xl lg:text-2xl leading-loose text-gray">
+          <p className="text-xl  leading-loose text-gray">
             Since I am more drawn to meaningful, local experiences rather than
             packaged tours, it felt inefficient to spend hours planning without
             a personalized result.
           </p>
           <div>
-            <p className="text-xl lg:text-2xl leading-loose ">
+            <p className="text-xl  leading-loose ">
               I saw two possible solutions to this problem:
             </p>
-            <ul className="text-gray text-xl lg:text-2xl list-disc p-6 space-y-4">
+            <ul className="text-gray text-xl list-disc p-6 space-y-4">
               <li>Rely on generic travel packages and pre made itineraries.</li>
               <li>
                 Build a system that creates itineraries based on personal
@@ -201,7 +201,7 @@ export default function ProjectDetails() {
               </li>
             </ul>
           </div>
-          <p className="text-xl lg:text-2xl leading-loose text-gray ">
+          <p className="text-xl  leading-loose text-gray ">
             Instead of settling for one size fits all plans, I chose the second
             option, designing an itinerary system focused on experiential
             tourism, where travelers receive personalized, dynamic plans that
@@ -213,7 +213,7 @@ export default function ProjectDetails() {
       {/* Tech used */}
       <div className="flex flex-col   mt-32">
         <div className="text-xl lg:text-2xl leading-loose">Tech Stack Used</div>
-        <div className="text-xl lg:text-2xl leading-loose text-gray ">
+        <div className="text-xl  leading-loose text-gray ">
           {project.techDescription}
         </div>
         <div className="flex gap-3 flex-wrap mt-8">
