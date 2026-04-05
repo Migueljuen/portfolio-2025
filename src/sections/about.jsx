@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="mt-24 lg:mt-48 ">
       <motion.div
-        id="about"
+
         initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, amount: 0.3 }}

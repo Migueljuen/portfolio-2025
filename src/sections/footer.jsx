@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer class="mt-48 lg:mt-72 border-t-2 border-gray-200 flex-col">
+    <footer id="footer" class="mt-48 lg:mt-72 border-t-2 border-gray-200 flex-col">
       <div class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between my-24 w-full">
         <p class="text-lg md:text-2xl leading-relaxed max-w-lg">
           That's it for now. If you want to work together, just reach out!
