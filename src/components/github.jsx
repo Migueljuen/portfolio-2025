@@ -4,7 +4,7 @@ import { SiGithub } from "react-icons/si";
 import "react-activity-calendar/tooltips.css";
 export default function GithubSection() {
   return (
-    <div className="border border-black/5 shadow-sm p-6 rounded-2xl  w-full">
+    <div className="border border-black/5 shadow-xs p-6 rounded-2xl  w-full">
       <div className=" p-2  text-black/80 mb-4 flex gap-2 items-center w-fit ">
         <SiGithub size={20} />
         <p className="text-sm font-medium">Github activity</p>

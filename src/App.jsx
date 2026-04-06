@@ -34,7 +34,7 @@ export default function App() {
         </Routes>
 
         {/* Footer*/}
-        <Footer id="footer" />
+        <Footer />
       </div>
     </>
   );

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import GithubSection from "../components/github";
-import Socials from "../components/socials";
-import Techstack from "../components/techstack";
-import { GoStack } from "react-icons/go";
+
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
 
@@ -40,12 +37,32 @@ export default function Hero() {
       {/* <!-- Hero Section --> */}
       <section class="flex mt-24 lg:mt-48 justify-start">
         <div class="">
-          <h1 class="text-base mb-4 text-black/60">Hey there,</h1>
-          <p class="text-lg md:text-2xl leading-relaxed max-w-4xl">
+
+          <motion.h1
+            id="about"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.6, delay: 0 }}
+            className="text-base mb-4 text-black/60 "
+          >
+            Hey there,
+          </motion.h1>
+
+          <motion.p
+            id="about"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-2xl leading-relaxed max-w-4xl "
+          >
             Nice to meet you, I'm Miguel. I enjoy UI design, coding, and
             building user-centered digital experiences. Feel free to explore my
             portfolio and get in touch!
-          </p>
+          </motion.p>
+
+
         </div>
       </section>
       {/* <!-- Main Section --> */}
@@ -100,38 +117,8 @@ export default function Hero() {
         </div>
       </main>
 
-      <div className="mt-24 lg:mt-48 flex flex-col gap-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2  w-full gap-4">
-          <Socials />
-          {/* Github */}
-          <div className="h-full min-h-0">
-            <GithubSection />
-          </div>
-        </div>
-
-        {/* Tech stack */}
-        <div className="border border-black/5 shadow-sm p-6 rounded-2xl w-auto flex flex-col gap-8 justify-between">
-          {/* Header */}
-          <div className="text-sm font-medium p-2 text-black/80 mb-4 flex gap-2 items-center w-fit">
-            <GoStack size={20} />
-            <p>Tech stack</p>
-          </div>
-
-          {/* Tech List */}
-          <Techstack />
-
-          <div className="space-y-2">
-            <h1 className="text-lg">Technologies I've been using</h1>
-            <p className="text-sm text-gray">
-              {" "}
-              Technologies and tools I use to build modern web and mobile
-              applications.
-            </p>
-          </div>
-        </div>
-      </div>
       {/* for link */}
-      <div id="testimonials"></div>
+      {/* <div id="testimonials hidden"></div> */}
       {/* <!-- Testimonial Section --> */}
       <div className="mt-24 lg:mt-48">
         <h1 className="text-base mb-8 pb-4">
