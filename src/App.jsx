@@ -7,7 +7,9 @@ import About from "./sections/about";
 import Works from "./sections/works";
 import Footer from "./sections/footer";
 import ProjectDetails from "./sections/project-details";
-
+import Credentials from "./sections/credentials";
+import Mockups from "./sections/mockups";
+import Testimonials from "./sections/testimonials";
 export default function App() {
   return (
     <>
@@ -23,6 +25,9 @@ export default function App() {
               <>
                 <Navbar />
                 <Hero />
+                <Mockups />
+                <Credentials />
+                <Testimonials />
                 <About />
                 {/* <Works /> */}
               </>
