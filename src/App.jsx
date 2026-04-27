@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
+import { Analytics } from "@vercel/analytics/next";
 import "./App.css";
 import Hero from "./sections/hero";
 import Navbar from "./components/navbar";
@@ -13,6 +13,7 @@ import Testimonials from "./sections/testimonials";
 export default function App() {
   return (
     <>
+      <Analytics />
       {/* Main container */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Main Sections */}
