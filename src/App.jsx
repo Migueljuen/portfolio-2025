@@ -26,11 +26,10 @@ export default function App() {
               <>
                 <Navbar />
                 <Hero />
-                <Mockups />
+                {/* <Mockups /> */}
                 <Credentials />
-                <Testimonials />
+                {/* <Testimonials /> */}
                 <About />
-                {/* <Works /> */}
               </>
             }
           />
