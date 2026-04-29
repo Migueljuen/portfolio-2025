@@ -4,7 +4,6 @@ export default function About() {
   return (
     <div className="mt-24 lg:mt-48 ">
       <motion.div
-
         initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, amount: 0.3 }}
@@ -22,7 +21,7 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-        className=" text-xl leading-12 lg:leading-loose lg:text-2xl  text-gray"
+        className=" text-lg md:text-2xl leading-12 text-gray"
       >
         Outside of coding, I’m interested in gaming and watching films. When I’m
         not working on projects, you’ll usually find me exploring creative ideas
