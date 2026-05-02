@@ -1,117 +1,189 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const mockups = [
-  {
-    id: 1,
-    title: "Blooms Dream Cafe",
-    description: "Mockup UI for a cafe",
-    year: "2025",
-    image: "/img3.png",
-    embedUrl:
-      "https://embed.figma.com/proto/Ifc9dYfmjrFKyzBk56KTVh/Elective-Finals?node-id=525-1566&starting-point-node-id=226%3A53&scaling=scale-down-width&embed-host=share",
-    featured: false,
-    imageStyle: { objectPosition: "left 20% top 10%" },
-  },
+const FIGMA_URLS = {
+  tutr: "https://embed.figma.com/proto/GnoV5RNwLywmXjry1EdA7A/Tutr?node-id=1-6&p=f&t=mQYQ1vf07ow4yhfB-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6&show-proto-sidebar=1&embed-host=share",
+  hiro: "https://embed.figma.com/proto/aIPo93jiFbZJhBEaA1fAwt/Hiro?node-id=5-3&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3&embed-host=share",
+};
 
-  {
-    id: 2,
-    title: "Hakban",
-    description: "Job tracking application",
-    year: "2026",
-    embedUrl:
-      "https://embed.figma.com/proto/g3SKc3hU1jekty62Ssb7z4/Hakban?node-id=24-233&starting-point-node-id=24%3A233&scaling=scale-down-width&embed-host=share",
-  },
-  {
-    id: 3,
-    title: "SavoryTrail",
-    description: "Food discovery app",
-    year: "2025",
-    embedUrl:
-      "https://embed.figma.com/proto/8mkvEZ95wyWWxY8aBWlXAs/SavoryTrail?node-id=244-120&starting-point-node-id=244%3A120&scaling=scale-down-width&embed-host=share",
-  },
-  {
-    id: 4,
-    title: "QuikBasket",
-    description: "Grocery shopping app UI",
-    year: "2025",
-    embedUrl:
-      "https://embed.figma.com/proto/4WU0biS9atidPxwgLXpDBr/Single-Page-Grocery-App?node-id=4-37&scaling=scale-down-width&page-id=0%3A1&embed-host=share",
-  },
-];
+function FigmaModal({ project, onClose }) {
+  // Close on Escape key
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
 
-export default function Mockups() {
   return (
-    <section id="mockups" className="mt-24 lg:mt-48">
-      {/* Heading */}
-      <h1 class="text-lg tracking-tight mb-8 pb-4 border-b border-gray-200">
-        Designs that come to life
-      </h1>
+    <AnimatePresence>
+      <motion.div
+        key="backdrop"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        onClick={onClose}
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 1000,
+          background: "rgba(0,0,0,0.72)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "24px",
+        }}
+      >
+        <motion.div
+          key="panel"
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.96, y: 20 }}
+          transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            position: "relative",
+            width: "95vw",
+            height: "95vh",
+            background: "#fff",
+            borderRadius: "16px",
+            overflow: "hidden",
+            boxShadow: "0 32px 80px rgba(0,0,0,0.35)",
+          }}
+        >
+          {/* Header bar */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "12px 20px",
+              borderBottom: "1px solid #e5e7eb",
+              background: "#fafafa",
+            }}
+          >
+            <span
+              style={{ fontSize: "14px", color: "#6b7280", fontWeight: 500 }}
+            >
+              {project === "tutr" ? "Tutr — Prototype" : "Hiro — Design"}
+            </span>
+            <button
+              onClick={onClose}
+              aria-label="Close prototype"
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "20px",
+                color: "#6b7280",
+                lineHeight: 1,
+                padding: "4px 8px",
+                borderRadius: "6px",
+                transition: "background 0.15s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "#f3f4f6")
+              }
+              onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
+            >
+              ✕
+            </button>
+          </div>
 
-      <div className="flex flex-col lg:flex-row gap-12">
-        {/* Left column */}
-        <div className="flex flex-col gap-12 w-full">
-          {[mockups[0], mockups[1]].map((mockup) => (
-            <div key={mockup.id} className="w-full flex flex-col group">
-              <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-                {mockup.embedUrl ? (
-                  <iframe
-                    src={mockup.embedUrl}
-                    className="w-full h-full transition-transform duration-300 group-hover:scale-[1.01]"
-                    style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
-                    allowFullScreen
-                  />
-                ) : (
-                  <img
-                    src={mockup.image}
-                    alt={mockup.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-                    style={mockup.imageStyle}
-                  />
-                )}
-              </div>
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-                <div>
-                  <h2 className="text-xl">{mockup.title}</h2>
-                  <p className="text-base text-gray">{mockup.description}</p>
-                </div>
-                <p className="text-xl text-gray">{mockup.year}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+          {/* Figma iframe */}
+          <iframe
+            title={project === "tutr" ? "Tutr Prototype" : "Hiro Design"}
+            src={FIGMA_URLS[project]}
+            allowFullScreen
+            style={{
+              width: "100%",
+              height: "calc(100% - 49px)",
+              border: "none",
+            }}
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+export default function Mockups() {
+  const [activeModal, setActiveModal] = useState(null);
 
-        {/* Right column */}
-        <div className="flex flex-col gap-12 w-full">
-          {[mockups[2], mockups[3]].map((mockup) => (
-            <div key={mockup.id} className="w-full flex flex-col group">
-              <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-                {mockup.embedUrl ? (
-                  <iframe
-                    src={mockup.embedUrl}
-                    className="w-full h-full transition-transform duration-300 group-hover:scale-[1.01]"
-                    style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
-                    allowFullScreen
-                  />
-                ) : (
-                  <img
-                    src={mockup.image}
-                    alt={mockup.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-                    style={mockup.imageStyle}
-                  />
-                )}
-              </div>
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-                <div>
-                  <h2 className="text-xl">{mockup.title}</h2>
-                  <p className="text-base text-gray">{mockup.description}</p>
-                </div>
-                <p className="text-xl text-gray">{mockup.year}</p>
-              </div>
+  return (
+    <>
+      {/* Figma Modal */}
+      {activeModal && (
+        <FigmaModal
+          project={activeModal}
+          onClose={() => setActiveModal(null)}
+        />
+      )}
+      {/* <!-- LANDING Section --> */}
+      <div className="mt-24 lg:mt-48">
+        <h1 class="text-base mb-8 pb-4 border-b border-gray-200" id="mockups">
+          Landing Pages
+        </h1>
+
+        {/* Tutr — opens Figma modal */}
+        <button
+          onClick={() => setActiveModal("tutr")}
+          className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
+        >
+          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
+            <img
+              src="/Landing-2.webp"
+              alt="Tutr landing page"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+            <div>
+              <h1 className="text-lg md:text-xl">Tutr</h1>
+              <p className="text-sm md:text-lg text-gray">
+                New age of learning work-ready skills
+              </p>
             </div>
-          ))}
-        </div>
+
+            <p id="others" className="text-base md:text-xl text-gray">
+              2026
+            </p>
+          </div>
+        </button>
+
+        {/* Hiro — opens Figma modal */}
+        <button
+          onClick={() => setActiveModal("hiro")}
+          className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
+        >
+          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
+            <img
+              src="/Landing-1.webp"
+              alt="Hiro landing page"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+            <div>
+              <h1 className="text-lg md:text-xl">Hiro</h1>
+              <p className="text-sm md:text-lg text-gray">
+                A next-gen talent marketplace
+              </p>
+            </div>
+
+            <p className="text-base md:text-xl text-gray">2026</p>
+          </div>
+        </button>
       </div>
-    </section>
+    </>
   );
 }

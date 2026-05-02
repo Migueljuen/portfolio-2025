@@ -61,10 +61,16 @@ export default function ProjectDetails() {
       <div className="flex  mt-24 lg:mt-32">
         <div className="flex flex-row justify-between items-baseline  w-full ">
           <div className="flex flex-col gap-2">
-            <h1 className="text-3xl sm:text-4xl font-medium leading-snug w-full flex flex-col items-start ">
+            <h1 className="text-3xl sm:text-4xl font-medium leading-snug w-full flex  items-center gap-4 ">
               {project.title}
               {id === "2" && (
-                <a href="https://hakban.vercel.app" target="_blank" className="text-blue-400 text-sm">Visit site</a>
+                <a
+                  href="https://hakban.vercel.app"
+                  target="_blank"
+                  className="text-blue-500 text-sm font-medium"
+                >
+                  Visit site
+                </a>
               )}
             </h1>
 
@@ -81,12 +87,6 @@ export default function ProjectDetails() {
 
       {/* IMAGE */}
       <div className="relative w-full aspect-[16/9] cursor-pointer">
-        {/* Colored shadow overlay behind the image */}
-        <div
-          className="absolute inset-0 blur-xl"
-          style={{ backgroundColor: project.shadowColor }}
-        ></div>
-
         {/* Image on top with blur animation */}
         {id === "2" ? (
           <video
@@ -120,7 +120,11 @@ export default function ProjectDetails() {
 
       {/* Onboarding Flow */}
       <div>
-        <div className={id === "2" ? "grid grid-cols-1" : "grid grid-cols-1 md:grid-cols-3"}>
+        <div
+          className={
+            id === "2" ? "grid grid-cols-1" : "grid grid-cols-1 md:grid-cols-3"
+          }
+        >
           {project.screenshots.onboarding.map((img, i) => (
             <div
               key={i}
@@ -145,7 +149,11 @@ export default function ProjectDetails() {
 
       {/* Create  Flow */}
       <div>
-        <div className={id === "2" ? "grid grid-cols-1" : "grid grid-cols-1 md:grid-cols-3"}>
+        <div
+          className={
+            id === "2" ? "grid grid-cols-1" : "grid grid-cols-1 md:grid-cols-3"
+          }
+        >
           {project.screenshots.create.map((img, i) => (
             <div
               key={i}
@@ -201,15 +209,17 @@ export default function ProjectDetails() {
             </p>
             <p className="text-lg lg:text-xl leading-loose text-dark-gray">
               Since I am more drawn to meaningful, local experiences rather than
-              packaged tours, it felt inefficient to spend hours planning without
-              a personalized result.
+              packaged tours, it felt inefficient to spend hours planning
+              without a personalized result.
             </p>
             <div>
               <p className="text-lg lg:text-xl leading-loose ">
                 I saw two possible solutions to this problem:
               </p>
               <ul className="text-dark-gray text-lg lg:text-xl list-disc p-6 space-y-4">
-                <li>Rely on generic travel packages and pre made itineraries.</li>
+                <li>
+                  Rely on generic travel packages and pre made itineraries.
+                </li>
                 <li>
                   Build a system that creates itineraries based on personal
                   preferences and local experiences.
@@ -217,10 +227,11 @@ export default function ProjectDetails() {
               </ul>
             </div>
             <p className="text-lg lg:text-xl leading-loose text-dark-gray ">
-              Instead of settling for one size fits all plans, I chose the second
-              option, designing an itinerary system focused on experiential
-              tourism, where travelers receive personalized, dynamic plans that
-              make trips more intentional, local, and memorable.
+              Instead of settling for one size fits all plans, I chose the
+              second option, designing an itinerary system focused on
+              experiential tourism, where travelers receive personalized,
+              dynamic plans that make trips more intentional, local, and
+              memorable.
             </p>
           </div>
         </div>
