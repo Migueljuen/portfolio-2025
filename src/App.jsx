@@ -9,11 +9,13 @@ import ProjectDetails from "./sections/project-details";
 import Credentials from "./sections/credentials";
 import Mockups from "./sections/mockups";
 import Featured from "./sections/featured";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
   return (
     <>
       <Analytics />
+      <SpeedInsights />
       {/* Main container */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Main Sections */}
