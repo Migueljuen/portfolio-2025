@@ -9,6 +9,7 @@ import ProjectDetails from "./sections/project-details";
 import Credentials from "./sections/credentials";
 import Mockups from "./sections/mockups";
 import Featured from "./sections/featured";
+import Graphics from "./sections/graphics";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
                 <Mockups />
                 <Credentials />
                 {/* <Testimonials /> */}
+                <Graphics />
                 <About />
               </>
             }

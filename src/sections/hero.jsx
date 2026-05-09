@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import Featured from "./featured";
-import Mockups from "./mockups";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);

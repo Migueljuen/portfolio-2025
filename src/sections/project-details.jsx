@@ -11,7 +11,6 @@ import {
   SiExpo,
   SiFirebase,
 } from "react-icons/si";
-import { div } from "framer-motion/client";
 import { Link } from "react-router-dom";
 
 export default function ProjectDetails() {

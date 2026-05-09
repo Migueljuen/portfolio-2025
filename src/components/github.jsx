@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import { GitHubCalendar } from "react-github-calendar";
 import { SiGithub } from "react-icons/si";
 import "react-activity-calendar/tooltips.css";
