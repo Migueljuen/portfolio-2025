@@ -22,15 +22,15 @@ function ImageModal({ src, alt, onClose }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.25 }}
+        transition={{ duration: 0.15 }}
         onClick={onClose}
         style={{
           position: "fixed",
           inset: 0,
           zIndex: 1000,
           background: "rgba(0,0,0,0.85)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

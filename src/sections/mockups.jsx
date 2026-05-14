@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const FIGMA_URLS = {
   tutr: "https://embed.figma.com/proto/GnoV5RNwLywmXjry1EdA7A/Tutr?node-id=1-6&p=f&t=mQYQ1vf07ow4yhfB-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6&show-proto-sidebar=1&embed-host=share",
   hiro: "https://embed.figma.com/proto/aIPo93jiFbZJhBEaA1fAwt/Hiro?node-id=5-3&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3&embed-host=share",
+  tabi: "https://embed.figma.com/proto/bAlksnzSYZ0PTVVquVXW68/Untitled?node-id=28-576&p=f&viewport=-2524%2C-360%2C0.38&t=gV7QEHPbegoYUB57-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=28%3A576&page-id=0%3A1&embed-host=share",
 };
 
 function FigmaModal({ project, onClose }) {
@@ -73,7 +74,11 @@ function FigmaModal({ project, onClose }) {
             <span
               style={{ fontSize: "14px", color: "#6b7280", fontWeight: 500 }}
             >
-              {project === "tutr" ? "Tutr — Prototype" : "Hiro — Design"}
+              {project === "tutr"
+                ? "Tutr — Prototype"
+                : project === "hiro"
+                  ? "Hiro — Design"
+                  : "Tabi — Prototype"}
             </span>
             <button
               onClick={onClose}
@@ -100,7 +105,13 @@ function FigmaModal({ project, onClose }) {
 
           {/* Figma iframe */}
           <iframe
-            title={project === "tutr" ? "Tutr Prototype" : "Hiro Design"}
+            title={
+              project === "tutr"
+                ? "Tutr Prototype"
+                : project === "hiro"
+                  ? "Hiro Design"
+                  : "Tabi Prototype"
+            }
             src={FIGMA_URLS[project]}
             allowFullScreen
             style={{
@@ -131,6 +142,31 @@ export default function Mockups() {
         <h1 class="text-base mb-8 pb-4 border-b border-gray-200" id="mockups">
           Landing Pages
         </h1>
+
+        {/* Tabi — opens Figma modal */}
+        <button
+          onClick={() => setActiveModal("tabi")}
+          className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
+        >
+          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
+            <img
+              src="/Landing-3.png"
+              alt="Tabi landing page"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+            <div>
+              <h1 className="text-lg md:text-xl">Tabi</h1>
+              <p className="text-sm md:text-lg text-gray">
+                A curated tablet marketplace for modern living
+              </p>
+            </div>
+
+            <p className="text-base md:text-xl text-gray">2026</p>
+          </div>
+        </button>
 
         {/* Tutr — opens Figma modal */}
         <button
