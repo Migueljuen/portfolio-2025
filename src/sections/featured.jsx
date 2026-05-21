@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 
@@ -27,99 +27,132 @@ const Featured = () => {
         Featured Works
       </h1>
 
-      <Link to="/project/2" className="w-full flex flex-col group mb-32 md:mb-48">
-        <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-          <video
-            src="/vid.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <div>
-            <h1 className="text-lg md:text-xl">Hakban</h1>
-            <p className="text-sm md:text-base text-gray mt-2 md:mt-0">
-              Designed and developed Hakban, a simplified login-less job tracker.
-            </p>
-          </div>
-
-          <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0 text-right">UI/UX Design · Frontend Development</p>
-        </div>
-      </Link>
-
-      <Link to="/project/1" className="w-full flex flex-col group mb-32 md:mb-48">
-        <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-          <img
-            src="/img2.png"
-            alt=""
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-          <div>
-            <h1 className="text-lg md:text-xl">Itinera</h1>
-            <p className="text-sm md:text-base text-gray mt-2 md:mt-0">
-              UI/UX and Frontend Developer for Itinera. A journey planner for everyone.
-            </p>
-          </div>
-
-          <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0  text-right">UI/UX Design · Frontend Development</p>
-        </div>
-      </Link>
-
-      {/* Actual works */}
-
-
-      <div class="mb-32 md:mb-48">
-        <Link to="https://eventstruct.com/" target="_blank" rel="noopener noreferrer" className="w-full ">
+      {/* Hakban */}
+      <motion.div
+        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
+        className=" w-full flex flex-col group mb-32 md:mb-48"
+      >
+        <Link to="/project/2" className="">
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-            <LazyImage
-              src="/eventstruct.webp"
-              alt="Eventstruct"
-              className="w-full md:w-5/6 mx-auto h-full object-contain transition-transform duration-300 "
-            />
-          </div>
-        </Link>
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-12 ">
-          <div>
-            <h1 className="text-lg md:text-xl">Eventstruct</h1>
-            <p className="text-sm md:text-base text-dark-gray mt-2 md:mt-0">
-              UI/UX designer for Eventstruct, a digital platform to simplify event management.
-            </p>
-          </div>
-
-          <p className="text-sm md:text-base  text-blue-600 text-right">UI/UX Design · Frontend Development</p>
-        </div>
-      </div>
-
-
-      <div class="mb-32 md:mb-48">
-        <Link to="https://hoanderful.com/" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col group mb-48">
-          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
-            <LazyImage
-              src="/hoanderful.webp"
-              alt="Hoanderful landing page"
-              className="w-full md:w-5/6 mx-auto h-full object-contain transition-transform duration-300 "
+            <video
+              src="/vid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
             <div>
-              <h1 className="text-lg md:text-xl">Hoanderful</h1>
-              <p className="text-sm md:text-base text-dark-gray mt-2 md:mt-0">
-                Redesigned Hoanderful, introducing improved UI/UX to enhance overall user experience.
+              <h1 className="text-lg md:text-xl">Hakban</h1>
+              <p className="text-sm md:text-base text-gray mt-2 md:mt-0">
+                Designed and developed Hakban, a simplified login-less job tracker.
               </p>
             </div>
 
-            <p className="text-sm md:text-base  text-blue-600 ">UI/UX Design </p>
+            <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0 text-right">UI/UX Design · Frontend Development</p>
           </div>
         </Link>
-      </div>
+      </motion.div>
+
+      {/* Itinera */}
+      <motion.div
+        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
+        className=" w-full flex flex-col group mb-32 md:mb-48"
+      >
+        <Link to="/project/1" className="">
+          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
+            <img
+              src="/img2.png"
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+            <div>
+              <h1 className="text-lg md:text-xl">Itinera</h1>
+              <p className="text-sm md:text-base text-gray mt-2 md:mt-0">
+                UI/UX and Frontend Developer for Itinera. A journey planner for everyone.
+              </p>
+            </div>
+
+            <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0  text-right">UI/UX Design · Frontend Development</p>
+          </div>
+        </Link>
+      </motion.div>
+      {/* Actual works */}
+
+      {/* Eventstruct */}
+      <motion.div
+        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
+        className=" w-full flex flex-col group mb-32 md:mb-48"
+      >
+        <div class="">
+          <Link to="https://eventstruct.com/" target="_blank" rel="noopener noreferrer" className="w-full ">
+            <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
+              <LazyImage
+                src="/eventstruct.webp"
+                alt="Eventstruct"
+                className="w-full md:w-5/6 mx-auto h-full object-contain transition-transform duration-300 "
+              />
+            </div>
+          </Link>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-12 ">
+            <div>
+              <h1 className="text-lg md:text-xl">Eventstruct</h1>
+              <p className="text-sm md:text-base text-dark-gray mt-2 md:mt-0">
+                UI/UX designer for Eventstruct, a digital platform to simplify event management.
+              </p>
+            </div>
+
+            <p className="text-sm md:text-base  text-blue-600 text-right">UI/UX Design · Frontend Development</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Hoanderful */}
+      <motion.div
+        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
+        className=" w-full flex flex-col group "
+      >
+        <div class="">
+          <Link to="https://hoanderful.com/" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col group mb-48">
+            <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
+              <LazyImage
+                src="/hoanderful.webp"
+                alt="Hoanderful landing page"
+                className="w-full md:w-5/6 mx-auto h-full object-contain transition-transform duration-300 "
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-12">
+              <div>
+                <h1 className="text-lg md:text-xl">Hoanderful</h1>
+                <p className="text-sm md:text-base text-dark-gray mt-2 md:mt-0">
+                  Redesigned Hoanderful, introducing improved UI/UX to enhance overall user experience.
+                </p>
+              </div>
+
+              <p className="text-sm md:text-base  text-blue-600 ">UI/UX Design </p>
+            </div>
+          </Link>
+        </div>
+      </motion.div>
 
     </div>
   );

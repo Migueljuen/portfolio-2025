@@ -159,82 +159,105 @@ export default function Mockups() {
         </h1>
 
         {/* Tabi — opens Figma modal */}
-        <button
-          onClick={() => setActiveModal("tabi")}
-          className="w-full flex flex-col group mb-16 text-left bg-transparent border-none p-0 cursor-pointer"
+        <motion.div
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+          className=" w-full flex flex-col group mb-32 md:mb-48 "
         >
-          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
-            <LazyImage
-              src="/Landing-3.webp"
-              alt="Tabi landing page"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-            <div>
-              <h1 className="text-lg md:text-xl">Tabi</h1>
-              <p className="text-sm md:text-lg text-gray">
-                A curated tablet marketplace for modern living
-              </p>
+          <button
+            onClick={() => setActiveModal("tabi")}
+            className="w-full flex flex-col group  text-left bg-transparent border-none p-0 cursor-pointer"
+          >
+            <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
+              <LazyImage
+                src="/Landing-3.webp"
+                alt="Tabi landing page"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+              />
             </div>
 
-            <p className="text-base md:text-xl text-gray">2026</p>
-          </div>
-        </button>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+              <div>
+                <h1 className="text-lg md:text-xl">Tabi</h1>
+                <p className="text-sm md:text-lg text-gray">
+                  A curated tablet marketplace for modern living
+                </p>
+              </div>
 
+              <p className="text-base md:text-xl text-gray">2026</p>
+            </div>
+          </button>
+        </motion.div>
         {/* Tutr — opens Figma modal */}
-        <button
-          onClick={() => setActiveModal("tutr")}
-          className="w-full flex flex-col group mb-16 text-left bg-transparent border-none p-0 cursor-pointer"
+        <motion.div
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+          className=" w-full flex flex-col group mb-32 md:mb-48"
         >
-          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
-            <LazyImage
-              src="/Landing-2.webp"
-              alt="Tutr landing page"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-            <div>
-              <h1 className="text-lg md:text-xl">Tutr</h1>
-              <p className="text-sm md:text-lg text-gray">
-                New age of learning work-ready skills
-              </p>
+          <button
+            onClick={() => setActiveModal("tutr")}
+            className="w-full flex flex-col group  text-left bg-transparent border-none p-0 cursor-pointer"
+          >
+            <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
+              <LazyImage
+                src="/Landing-2.webp"
+                alt="Tutr landing page"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+              />
             </div>
 
-            <p id="others" className="text-base md:text-xl text-gray">
-              2026
-            </p>
-          </div>
-        </button>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+              <div>
+                <h1 className="text-lg md:text-xl">Tutr</h1>
+                <p className="text-sm md:text-lg text-gray">
+                  New age of learning work-ready skills
+                </p>
+              </div>
 
+              <p id="others" className="text-base md:text-xl text-gray">
+                2026
+              </p>
+            </div>
+          </button>
+        </motion.div>
         {/* Hiro — opens Figma modal */}
-        <button
-          onClick={() => setActiveModal("hiro")}
-          className="w-full flex flex-col group mb-16 text-left bg-transparent border-none p-0 cursor-pointer"
+        <motion.div
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+          className=" w-full flex flex-col group mb-32 md:mb-48"
         >
-          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
-            <LazyImage
-              src="/Landing-1.webp"
-              alt="Hiro landing page"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-            <div>
-              <h1 className="text-lg md:text-xl">Hiro</h1>
-              <p className="text-sm md:text-lg text-gray">
-                A next-gen talent marketplace
-              </p>
+          <button
+            onClick={() => setActiveModal("hiro")}
+            className="w-full flex flex-col group  text-left bg-transparent border-none p-0 cursor-pointer"
+          >
+            <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
+              <LazyImage
+                src="/Landing-1.webp"
+                alt="Hiro landing page"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+              />
             </div>
 
-            <p className="text-base md:text-xl text-gray">2026</p>
-          </div>
-        </button>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+              <div>
+                <h1 className="text-lg md:text-xl">Hiro</h1>
+                <p className="text-sm md:text-lg text-gray">
+                  A next-gen talent marketplace
+                </p>
+              </div>
+
+              <p className="text-base md:text-xl text-gray">2026</p>
+            </div>
+          </button>
+        </motion.div>
       </div>
+
     </>
   );
 }
