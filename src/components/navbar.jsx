@@ -74,7 +74,7 @@ export default function Navbar() {
                   delay: 0.2,
                 }}
               >
-                <a href="#featured">Featured Work</a>
+                <a href="#featured">Featured Works</a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: -50 }}

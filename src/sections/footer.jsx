@@ -29,7 +29,7 @@ export default function Footer() {
           That's it for now. If you want to work together, just reach out!
         </p>
         <nav>
-          <ul class="flex flex-col items-end gap-4">
+          <ul class="flex flex-col items-start md:items-end gap-4">
             <li>
               <button
                 onClick={handleCopyEmail}
