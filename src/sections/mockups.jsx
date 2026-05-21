@@ -161,7 +161,7 @@ export default function Mockups() {
         {/* Tabi — opens Figma modal */}
         <button
           onClick={() => setActiveModal("tabi")}
-          className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
+          className="w-full flex flex-col group mb-16 text-left bg-transparent border-none p-0 cursor-pointer"
         >
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
             <LazyImage
@@ -186,7 +186,7 @@ export default function Mockups() {
         {/* Tutr — opens Figma modal */}
         <button
           onClick={() => setActiveModal("tutr")}
-          className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
+          className="w-full flex flex-col group mb-16 text-left bg-transparent border-none p-0 cursor-pointer"
         >
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
             <LazyImage
@@ -213,7 +213,7 @@ export default function Mockups() {
         {/* Hiro — opens Figma modal */}
         <button
           onClick={() => setActiveModal("hiro")}
-          className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
+          className="w-full flex flex-col group mb-16 text-left bg-transparent border-none p-0 cursor-pointer"
         >
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
             <LazyImage
