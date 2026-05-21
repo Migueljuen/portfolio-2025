@@ -11,7 +11,7 @@ export default function Hero() {
       <section class="flex mt-24 lg:mt-48 justify-start">
         <div class="">
           <motion.h1
-            id="about"
+
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -22,7 +22,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            id="about"
+
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}

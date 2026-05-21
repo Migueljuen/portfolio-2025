@@ -38,9 +38,9 @@ export default function Socials() {
       <div className="group  hover:border-black/10 flex-1 border flex items-center justify-between border-black/5  shadow-xs p-6 rounded-2xl ">
         <p className="font-medium text-sm  whitespace-nowrap flex items-center gap-2">
           <GoQuote className="size-4 " />
-          Contact me
+          See My Resume
         </p>
-        <a href="#footer">
+        <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
           <GoChevronRight className="size-8 group-hover:rotate-90 transition" />
         </a>
       </div>

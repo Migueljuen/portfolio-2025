@@ -31,10 +31,11 @@ export default function App() {
                 <Hero />
                 <Featured />
                 <Mockups />
-                <Credentials />
+
                 {/* <Testimonials /> */}
-                <Graphics />
+                {/* <Graphics /> */}
                 <About />
+                {/* <Credentials /> */}
               </>
             }
           />

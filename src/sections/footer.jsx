@@ -29,31 +29,31 @@ export default function Footer() {
           That's it for now. If you want to work together, just reach out!
         </p>
         <nav>
-          <ul class="flex flex-col items-start gap-4">
+          <ul class="flex flex-col items-end gap-4">
             <li>
               <button
                 onClick={handleCopyEmail}
-                className="flex items-center gap-2 group cursor-pointer"
-                title="Copy email"
+                className="flex items-center gap-2 group cursor-pointer transition-all duration-300"
+                style={{
+                  transform: scaled ? "scale(1.2)" : "scale(1)",
+                }}
               >
-                <span>juenmiguel00@gmail.com</span>
-                <span
-                  className="transition-all duration-300"
-                  style={{
-                    transform: scaled ? "scale(1.2)" : "scale(1)",
-                  }}
-                >
-                  {copied ? (
-                    <BookmarkSquareIcon className="size-5 " />
-                  ) : (
-                    <DocumentDuplicateIcon className="size-5  group-hover:opacity-100 " />
-                  )}
-                </span>
+                {copied ? (
+                  <span>Copied!</span>
+                ) : (
+                  <span>juenmiguel00@gmail.com</span>
+                )}
+
               </button>
             </li>
             <li>
-              <a href="" class="">
+              <a class="">
                 09566077676
+              </a>
+            </li>
+            <li>
+              <a class="text-blue-600" href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+                View Resume
               </a>
             </li>
           </ul>

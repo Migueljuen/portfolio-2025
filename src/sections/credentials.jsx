@@ -7,7 +7,7 @@ export default function Credentials() {
   return (
     <div className="mt-24 lg:mt-48 flex flex-col gap-4">
       <h1 class="text-base tracking-tight mb-8 pb-4 border-b border-gray-200">
-        Tech stack and credentials
+        Tools and Credentials
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2  w-full gap-4">
         <Socials />

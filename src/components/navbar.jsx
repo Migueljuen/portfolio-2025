@@ -48,7 +48,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Desktop Header (Maintained) ── */}
+      {/* ── Desktop Header  ── */}
       <header className="flex justify-between z-10 sticky top-0 bg-white py-4">
         <motion.p
           id="top"
@@ -88,7 +88,7 @@ export default function Navbar() {
               >
                 <a href="#mockups">Mockups</a>
               </motion.li>
-              <motion.li
+              {/* <motion.li
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -99,6 +99,18 @@ export default function Navbar() {
                 }}
               >
                 <a href="#graphics">Graphics</a>
+              </motion.li> */}
+              <motion.li
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  bounce: 0,
+                  duration: 0.8,
+                  delay: 0.4,
+                }}
+              >
+                <a href="#about">About</a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: -50 }}

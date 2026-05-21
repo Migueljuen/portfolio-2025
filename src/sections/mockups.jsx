@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function LazyImage({ src, alt, className }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      onLoad={() => setLoaded(true)}
+      className={className}
+      style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+    />
+  );
+}
+
 const FIGMA_URLS = {
   tutr: "https://embed.figma.com/proto/GnoV5RNwLywmXjry1EdA7A/Tutr?node-id=1-6&p=f&t=mQYQ1vf07ow4yhfB-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6&show-proto-sidebar=1&embed-host=share",
   hiro: "https://embed.figma.com/proto/aIPo93jiFbZJhBEaA1fAwt/Hiro?node-id=5-3&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3&embed-host=share",
@@ -149,8 +164,8 @@ export default function Mockups() {
           className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
         >
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
-            <img
-              src="/Landing-3.png"
+            <LazyImage
+              src="/Landing-3.webp"
               alt="Tabi landing page"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
             />
@@ -174,7 +189,7 @@ export default function Mockups() {
           className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
         >
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
-            <img
+            <LazyImage
               src="/Landing-2.webp"
               alt="Tutr landing page"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
@@ -201,7 +216,7 @@ export default function Mockups() {
           className="w-full flex flex-col group mb-12 text-left bg-transparent border-none p-0 cursor-pointer"
         >
           <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
-            <img
+            <LazyImage
               src="/Landing-1.webp"
               alt="Hiro landing page"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
