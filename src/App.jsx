@@ -33,7 +33,7 @@ export default function App() {
                 <Mockups />
 
                 {/* <Testimonials /> */}
-                {/* <Graphics /> */}
+                <Graphics />
                 <About />
                 {/* <Credentials /> */}
               </>

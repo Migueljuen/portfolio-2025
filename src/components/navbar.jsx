@@ -88,7 +88,7 @@ export default function Navbar() {
               >
                 <a href="#mockups">Mockups</a>
               </motion.li>
-              {/* <motion.li
+              <motion.li
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -99,7 +99,7 @@ export default function Navbar() {
                 }}
               >
                 <a href="#graphics">Graphics</a>
-              </motion.li> */}
+              </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -157,12 +157,12 @@ export default function Navbar() {
           <DevicePhoneMobileIcon className="size-5" />
         </button>
 
-        {/* <button
+        <button
           onClick={() => scrollToSection("graphics")}
           className="p-2 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 text-black/70 hover:text-black"
         >
           <PaintBrushIcon className="size-5" />
-        </button> */}
+        </button>
 
         <button
           onClick={() => scrollToSection("footer")}
