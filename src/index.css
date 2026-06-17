@@ -1,8 +1,10 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Switzer", sans-serif;
+  overflow-x: hidden;
   /* color: #ffffffe9; */
 }

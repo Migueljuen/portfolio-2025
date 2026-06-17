@@ -18,6 +18,8 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.35.2",
     "lucide-react": "^0.563.0",
+    "mathjs": "^15.2.0",
+    "motion": "^12.40.0",
     "radix-ui": "^1.4.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

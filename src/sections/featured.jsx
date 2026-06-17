@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-
+import { motion } from "framer-motion";
 
 function LazyImage({ src, alt, className }) {
   const [loaded, setLoaded] = useState(false);
@@ -22,21 +21,22 @@ function LazyImage({ src, alt, className }) {
 
 const Featured = () => {
   return (
-    <div className="mt-32 lg:mt-48">
+
+    <motion.div
+      id="bottom"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", bounce: 0, duration: 0.8, delay: 0.1 }}
+      className="mt-32 lg:mt-48">
       <h1 class="text-base mb-8 pb-4 border-b border-gray-200" id="featured">
         Featured Works
       </h1>
 
       {/* Hakban */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
-        className=" w-full flex flex-col group mb-32 md:mb-48"
-      >
-        <Link to="/project/2" className="">
-          <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
+      <div
+        className="relative overflow-hidden mb-32 md:mb-48 " >
+        <Link to="/project/2" className=" ">
+          <div className=" rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden cursor-pointer">
             <video
               src="/vid.mp4"
               autoPlay
@@ -45,27 +45,29 @@ const Featured = () => {
               playsInline
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
             />
+
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-            <div>
-              <h1 className="text-lg md:text-xl">Hakban</h1>
-              <p className="text-sm md:text-base text-gray mt-2 md:mt-0">
-                Designed and developed Hakban, a simplified login-less job tracker.
-              </p>
-            </div>
-
-            <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0 text-right">UI/UX Design · Frontend Development</p>
-          </div>
         </Link>
-      </motion.div>
+        <div className=" flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+          <div>
+            <h1 className="text-lg md:text-xl">Hakban</h1>
+            <p className="text-sm md:text-base text-gray mt-2 md:mt-0">
+              Designed and developed Hakban, a simplified login-less job tracker.
+            </p>
+          </div>
+
+          <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0 text-right">UI/UX Design · Frontend Development</p>
+        </div>
+      </div>
+
+
+
+
 
       {/* Itinera */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
+      <div
+
         className=" w-full flex flex-col group mb-32 md:mb-48"
       >
         <Link to="/project/1" className="">
@@ -88,15 +90,12 @@ const Featured = () => {
             <p className="text-sm md:text-base  text-blue-600 mt-2 md:mt-0  text-right">UI/UX Design · Frontend Development</p>
           </div>
         </Link>
-      </motion.div>
+      </div>
       {/* Actual works */}
 
       {/* Eventstruct */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
+      <div
+
         className=" w-full flex flex-col group mb-32 md:mb-48"
       >
         <div class="">
@@ -120,12 +119,11 @@ const Featured = () => {
             <p className="text-sm md:text-base  text-blue-600 text-right">UI/UX Design · Frontend Development</p>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Hoanderful */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      <div
+
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
         className=" w-full flex flex-col group "
@@ -152,9 +150,9 @@ const Featured = () => {
             </div>
           </Link>
         </div>
-      </motion.div>
+      </div>
 
-    </div>
+    </motion.div>
   );
 };
 

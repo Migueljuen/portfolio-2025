@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 function LazyImage({ src, alt, className }) {
   const [loaded, setLoaded] = useState(false);
@@ -37,109 +36,98 @@ function FigmaModal({ project, onClose }) {
   }, [onClose]);
 
   return (
-    <AnimatePresence>
-      <motion.div
-        key="backdrop"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.25 }}
-        onClick={onClose}
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 1000,
+        background: "rgba(0,0,0,0.72)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px",
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
         style={{
-          position: "fixed",
-          inset: 0,
-          zIndex: 1000,
-          background: "rgba(0,0,0,0.72)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "24px",
+          position: "relative",
+          width: "95vw",
+          height: "95vh",
+          background: "#fff",
+          borderRadius: "16px",
+          overflow: "hidden",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.35)",
         }}
       >
-        <motion.div
-          key="panel"
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 20 }}
-          transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-          onClick={(e) => e.stopPropagation()}
+        {/* Header bar */}
+        <div
           style={{
-            position: "relative",
-            width: "95vw",
-            height: "95vh",
-            background: "#fff",
-            borderRadius: "16px",
-            overflow: "hidden",
-            boxShadow: "0 32px 80px rgba(0,0,0,0.35)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "12px 20px",
+            borderBottom: "1px solid #e5e7eb",
+            background: "#fafafa",
           }}
         >
-          {/* Header bar */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              padding: "12px 20px",
-              borderBottom: "1px solid #e5e7eb",
-              background: "#fafafa",
-            }}
+          <span
+            style={{ fontSize: "14px", color: "#6b7280", fontWeight: 500 }}
           >
-            <span
-              style={{ fontSize: "14px", color: "#6b7280", fontWeight: 500 }}
-            >
-              {project === "tutr"
-                ? "Tutr — Prototype"
-                : project === "hiro"
-                  ? "Hiro — Design"
-                  : "Tabi — Prototype"}
-            </span>
-            <button
-              onClick={onClose}
-              aria-label="Close prototype"
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "20px",
-                color: "#6b7280",
-                lineHeight: 1,
-                padding: "4px 8px",
-                borderRadius: "6px",
-                transition: "background 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#f3f4f6")
-              }
-              onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
-            >
-              ✕
-            </button>
-          </div>
-
-          {/* Figma iframe */}
-          <iframe
-            title={
-              project === "tutr"
-                ? "Tutr Prototype"
-                : project === "hiro"
-                  ? "Hiro Design"
-                  : "Tabi Prototype"
-            }
-            src={FIGMA_URLS[project]}
-            allowFullScreen
+            {project === "tutr"
+              ? "Tutr — Prototype"
+              : project === "hiro"
+                ? "Hiro — Design"
+                : "Tabi — Prototype"}
+          </span>
+          <button
+            onClick={onClose}
+            aria-label="Close prototype"
             style={{
-              width: "100%",
-              height: "calc(100% - 49px)",
+              background: "none",
               border: "none",
+              cursor: "pointer",
+              fontSize: "20px",
+              color: "#6b7280",
+              lineHeight: 1,
+              padding: "4px 8px",
+              borderRadius: "6px",
+              transition: "background 0.15s",
             }}
-          />
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "#f3f4f6")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Figma iframe */}
+        <iframe
+          title={
+            project === "tutr"
+              ? "Tutr Prototype"
+              : project === "hiro"
+                ? "Hiro Design"
+                : "Tabi Prototype"
+          }
+          src={FIGMA_URLS[project]}
+          allowFullScreen
+          style={{
+            width: "100%",
+            height: "calc(100% - 49px)",
+            border: "none",
+          }}
+        />
+      </div>
+    </div>
   );
 }
+
 export default function Mockups() {
   const [activeModal, setActiveModal] = useState(null);
 
@@ -154,21 +142,15 @@ export default function Mockups() {
       )}
       {/* <!-- LANDING Section --> */}
       <div className="mt-24 lg:mt-48">
-        <h1 class="text-base mb-8 pb-4 border-b border-gray-200" id="mockups">
+        <h1 className="text-base mb-8 pb-4 border-b border-gray-200" id="mockups">
           Landing Pages
         </h1>
 
         {/* Tabi — opens Figma modal */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-          className=" w-full flex flex-col group mb-32 md:mb-48 "
-        >
+        <div className="w-full flex flex-col group mb-32 md:mb-48">
           <button
             onClick={() => setActiveModal("tabi")}
-            className="w-full flex flex-col group  text-left bg-transparent border-none p-0 cursor-pointer"
+            className="w-full flex flex-col group text-left bg-transparent border-none p-0 cursor-pointer"
           >
             <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
               <LazyImage
@@ -189,18 +171,13 @@ export default function Mockups() {
               <p className="text-base md:text-xl text-gray">2026</p>
             </div>
           </button>
-        </motion.div>
+        </div>
+
         {/* Tutr — opens Figma modal */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-          className=" w-full flex flex-col group mb-32 md:mb-48"
-        >
+        <div className="w-full flex flex-col group mb-32 md:mb-48">
           <button
             onClick={() => setActiveModal("tutr")}
-            className="w-full flex flex-col group  text-left bg-transparent border-none p-0 cursor-pointer"
+            className="w-full flex flex-col group text-left bg-transparent border-none p-0 cursor-pointer"
           >
             <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
               <LazyImage
@@ -223,18 +200,13 @@ export default function Mockups() {
               </p>
             </div>
           </button>
-        </motion.div>
+        </div>
+
         {/* Hiro — opens Figma modal */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-          className=" w-full flex flex-col group mb-32 md:mb-48"
-        >
+        <div className="w-full flex flex-col group mb-32 md:mb-48">
           <button
             onClick={() => setActiveModal("hiro")}
-            className="w-full flex flex-col group  text-left bg-transparent border-none p-0 cursor-pointer"
+            className="w-full flex flex-col group text-left bg-transparent border-none p-0 cursor-pointer"
           >
             <div className="relative rounded-xl w-full aspect-[16/9] bg-white/5 overflow-hidden">
               <LazyImage
@@ -255,9 +227,8 @@ export default function Mockups() {
               <p className="text-base md:text-xl text-gray">2026</p>
             </div>
           </button>
-        </motion.div>
+        </div>
       </div>
-
     </>
   );
 }

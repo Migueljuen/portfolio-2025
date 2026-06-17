@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer id="footer" class="mt-48 lg:mt-72 border-gray-200 flex-col">
       <h1 class="text-base tracking-tight mb-8 pb-4 border-b border-gray-200">
-        Reach out
+        Get in Touch
       </h1>
       <div class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between my-24 w-full">
         <p class="text-lg md:text-2xl leading-relaxed max-w-lg">

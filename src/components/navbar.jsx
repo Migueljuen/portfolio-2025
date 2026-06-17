@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowUpIcon,
-  StarIcon,
+  HomeIcon,
+  ArchiveBoxIcon,
   DevicePhoneMobileIcon,
-  PaintBrushIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
+  CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
+import Dock from "./Dock";
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
-        setIsVisible(false);
-      }
-
-      setLastScrollY(currentScrollY);
+      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -46,131 +37,91 @@ export default function Navbar() {
     }
   };
 
+  const dockItems = [
+    {
+      icon: <HomeIcon style={{ width: 18, height: 18, color: "#fff" }} />,
+      label: "Go to Top",
+      onClick: () => scrollToSection("top"),
+    },
+    {
+      icon: <ArchiveBoxIcon style={{ width: 18, height: 18, color: "#fff" }} />,
+      label: "Featured Works",
+      onClick: () => scrollToSection("featured"),
+    },
+    {
+      icon: <DevicePhoneMobileIcon style={{ width: 18, height: 18, color: "#fff" }} />,
+      label: "Mockups",
+      onClick: () => scrollToSection("mockups"),
+    },
+    {
+      icon: <CubeTransparentIcon style={{ width: 18, height: 18, color: "#fff" }} />,
+      label: "Graphics",
+      onClick: () => scrollToSection("graphics"),
+    },
+  ];
+
   return (
     <>
       {/* ── Desktop Header  ── */}
-      <header className="flex justify-between z-10 sticky top-0 bg-white py-4">
-        <motion.p
-          id="top"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", bounce: 0, duration: 0.8, delay: 0.1 }}
-          className="text-lg"
-        >
-          <a href="#" className="">
-            Miguel Juen
-          </a>
-        </motion.p>
-        <div>
-          <nav>
-            <ul className="space-x-8 hidden md:flex">
-              <motion.li
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.8,
-                  delay: 0.2,
-                }}
-              >
-                <a href="#featured">Featured Works</a>
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.8,
-                  delay: 0.3,
-                }}
-              >
-                <a href="#mockups">Mockups</a>
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.8,
-                  delay: 0.4,
-                }}
-              >
-                <a href="#graphics">Graphics</a>
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.8,
-                  delay: 0.4,
-                }}
-              >
-                <a href="#about">About</a>
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.8,
-                  delay: 0.5,
-                }}
-              >
-                <a href="#footer">Reach Out</a>
-              </motion.li>
-            </ul>
-          </nav>
+      <motion.div
+        id="top"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", bounce: 0, duration: 0.8, delay: 0.1 }}
+        className="flex justify-between gap-48 z-10 sticky top-0  bg-white w-full py-4">
+        <div className="flex items-center justify-between w-full">
+          <p
+
+            className="text-lg tracking-tight flex flex-col "
+          >
+            <a className="">
+              Miguel Juen
+            </a>
+            <a className="text-gray/50">
+              Designer
+            </a>
+          </p>
+          <p
+
+            className="text-lg tracking-tight flex flex-col "
+          >
+            <a className="">
+              Freelance Availability
+            </a>
+            <a h className="text-gray/50">
+              Available
+            </a>
+          </p>
+          <p
+            className="text-lg tracking-tight flex flex-col"
+          >
+            <a className="">
+              Designing at
+            </a>
+            <a href="https://giga.ai/" target="_blank" className="text-gray/50">
+              Giga
+
+            </a>
+          </p>
+
         </div>
-      </header>
-
-      {/* ── Mobile Floating Nav ── */}
-      <nav
-        className={`md:hidden fixed z-50 rounded-full border border-black/10 bg-white/90 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.12)]
-        flex items-center justify-between transition-transform duration-300 will-change-transform
-        bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[320px] px-6 py-3
-        ${isVisible ? "translate-y-0" : "translate-y-24"}`}
-      >
-        <button
-          onClick={() => scrollToSection("top")}
-          className="p-2 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 text-black/70 hover:text-black"
+        <p
+          className="flex gap-4 bg-[#120F17] items-center px-6 rounded-full transition-all duration-300 hover:bg-black/80 active:scale-95 "
         >
-          <ArrowUpIcon className="size-5" />
-        </button>
+          <a href="#footer" className=" text-white/90 tracking-tight whitespace-nowrap font-semibold">Get in Touch</a>
+        </p>
+      </motion.div>
 
-        <button
-          onClick={() => scrollToSection("featured")}
-          className="p-2 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 text-black/70 hover:text-black"
-        >
-          <StarIcon className="size-5" />
-        </button>
-
-        <button
-          onClick={() => scrollToSection("mockups")}
-          className="p-2 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 text-black/70 hover:text-black"
-        >
-          <DevicePhoneMobileIcon className="size-5" />
-        </button>
-
-        <button
-          onClick={() => scrollToSection("graphics")}
-          className="p-2 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 text-black/70 hover:text-black"
-        >
-          <PaintBrushIcon className="size-5" />
-        </button>
-
-        <button
-          onClick={() => scrollToSection("footer")}
-          className="p-2 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 text-black/70 hover:text-black"
-        >
-          <ChatBubbleOvalLeftEllipsisIcon className="size-5" />
-        </button>
-      </nav>
+      {/* ── Floating Dock Nav ── */}
+      <div className="fixed z-[9999999] bottom-6 left-1/2 -translate-x-1/2 ">
+        <Dock
+          items={dockItems}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+          distance={150}
+        />
+      </div>
     </>
   );
 }

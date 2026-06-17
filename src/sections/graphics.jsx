@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 /* ── Image Modal ─────────────────────────────────────────── */
 function ImageModal({ src, alt, onClose }) {
@@ -16,35 +15,26 @@ function ImageModal({ src, alt, onClose }) {
   }, [onClose]);
 
   return (
-    <AnimatePresence>
-      <motion.div
-        key="backdrop"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.15 }}
-        onClick={onClose}
+    <div
+      key="backdrop"
+      onClick={onClose}
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 1000,
+        background: "rgba(0,0,0,0.85)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px",
+      }}
+    >
+      <div
+        key="panel"
+        onClick={(e) => e.stopPropagation()}
         style={{
-          position: "fixed",
-          inset: 0,
-          zIndex: 1000,
-          background: "rgba(0,0,0,0.85)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "24px",
-        }}
-      >
-        <motion.div
-          key="panel"
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 20 }}
-          transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-          onClick={(e) => e.stopPropagation()}
-          style={{
             position: "relative",
             maxWidth: "95vw",
             maxHeight: "95vh",
@@ -92,9 +82,8 @@ function ImageModal({ src, alt, onClose }) {
               objectFit: "contain",
             }}
           />
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    </div>
   );
 }
 
@@ -139,21 +128,17 @@ const Graphics = () => {
         style={{ gridAutoRows: "420px" }}
       >
         {items.map((item, i) => (
-          <motion.button
+          <button
             key={item.src}
             onClick={() => setActive(item)}
             className={`${item.span} rounded-2xl overflow-hidden bg-gray-100 group cursor-pointer border-none p-0`}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
           >
             <img
               src={item.src}
               alt={item.alt}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
-          </motion.button>
+          </button>
         ))}
       </div>
     </div>
